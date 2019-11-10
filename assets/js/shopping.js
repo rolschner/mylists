@@ -1,8 +1,9 @@
 //Document ready, load <li> list
 $(function() {
 	// Document is ready!
-    console.log( "ready!" );
-	let listItems = JSON.parse(localStorage.getItem("shoppingList"));
+	let listItems = [];
+	let stored = JSON.parse(localStorage.getItem("shoppingList"));
+	if(stored !== null) {listItems = stored};
 	if(listItems.length === 0) {
 		// Create a defeault list of items for a new page
 		listItems.push("Apples");
